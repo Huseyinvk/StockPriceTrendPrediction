@@ -13,10 +13,22 @@ model = joblib.load("model.joblib")
 ticker = st.text_input("Hisse sembolü gir (örn: AAPL, THYAO.IS)", "AAPL")
 
 if st.button("Tahmin Et"):
-    data = yf.download(ticker, period="6mo")
+    ticker = ticker.strip().upper()
 
-    if data.empty:
-        st.error("Veri çekilemedi")
+    data = yf.download(
+        ticker,
+        period="1y",
+        interval="1d",
+        auto_adjust=True,
+        progress=False,
+        threads=False
+    )
+
+
+    if data is None or data.empty:
+    st.error("Veri çekilemedi. Sembolü kontrol et (örn: AAPL, THYAO.IS).")
+    st.stop()
+
     else:
         data["ret_1"] = data["Close"].pct_change()
         data["ma_10"] = data["Close"].rolling(10).mean()
