@@ -26,8 +26,8 @@ if st.button("Tahmin Et"):
 
 
     if data is None or data.empty:
-    st.error("Veri çekilemedi. Sembolü kontrol et (örn: AAPL, THYAO.IS).")
-    st.stop()
+        st.error("Veri çekilemedi. Sembolü kontrol et (örn: AAPL, THYAO.IS).")
+        st.stop()
 
     else:
         data["ret_1"] = data["Close"].pct_change()
