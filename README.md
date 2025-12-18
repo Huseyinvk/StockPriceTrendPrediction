@@ -1,5 +1,13 @@
 # Stock Trend Prediction App
 
+**Live Demo (Streamlit App):**  
+👉 https://stockpricetrendprediction-lnmredthjfqeax6ugkucek.streamlit.app
+
+An end-to-end **Machine Learning–powered web application** that predicts short-term stock price trends using historical market data and technical indicators.
+
+This project covers the **full ML lifecycle** — from data ingestion and feature engineering to model inference and live deployment.
+
+
 An end-to-end **Machine Learning & Data Science** project that predicts short-term stock price **trend direction** using historical market data.
 
 The project includes:
